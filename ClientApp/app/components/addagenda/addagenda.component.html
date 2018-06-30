@@ -1,0 +1,60 @@
+﻿<h1>{{title}}</h1>
+<h3>Agenda</h3>
+<hr />
+<form [formGroup]="employeeForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Nome Paciente</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="name">
+        </div>
+        <span class="text-danger" *ngIf="name.invalid && formDir.submitted">
+            Nome é obrigatório.
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-12" for="Department">Data de Nascimento</label>
+        <div class="col-md-4">
+            <input class="form-control" type="date" formControlName="data">
+        </div>
+        <span class="text-danger" *ngIf="department.invalid && formDir.submitted">
+            Data de Nascimento é obrigatório
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-12" for="DataInicial">Data Inicial</label>
+        <div class="col-md-4">
+            <input class="form-control" type="date" formControlName="datainicial">
+        </div>
+        <span class="text-danger" *ngIf="department.invalid && formDir.submitted">
+            Data Inicial é obrigatório
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-12" for="DataFinal">Data Final</label>
+        <div class="col-md-4">
+            <input class="form-control" type="date" formControlName="datafinal">
+        </div>
+        <span class="text-danger" *ngIf="department.invalid && formDir.submitted">
+            Data Final é obrigatório
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-12" for="Observacao">Observações</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="Observacao">
+        </div>
+        <span class="text-danger" *ngIf="department.invalid && formDir.submitted">
+            Observacao é obrigatório
+        </span>
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+</form>
